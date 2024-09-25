@@ -1,5 +1,6 @@
 name: Node.js CI
 
+# Ejecuta la acción en eventos push o pull request en la rama 'main'
 on:
   push:
     branches: [ "main" ]
@@ -12,21 +13,30 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [14.x, 16.x] # Ejecuta pruebas en ambas versiones
 
     steps:
-    - uses: actions/checkout@v2
+    # Paso 1: Checkout del código fuente
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
+    # Paso 2: Configuración de la versión de Node.js según la matriz
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
 
-    # Verificar versión de Node.js instalada
+    # Paso 3: Verificar la versión de Node.js
     - run: node -v
 
-    # Instalar dependencias
-    - run: npm install
+    # Paso 4: Instalar dependencias
+    - name: Install dependencies
+      run: npm install
 
-    # Ejecutar pruebas con Jest en modo detallado
-    - run: npm run test -- --verbose
+    # Paso 5: Ejecutar las pruebas con Jest en modo detallado
+    - name: Run tests with Jest
+      run: npm run test -- --verbose
+
+    # Paso 6: Opcionalmente, despliegue o construir el proyecto
+    - name: Build project (Optional)
+      run: npm run build # Reemplaza este paso si no necesitas build
