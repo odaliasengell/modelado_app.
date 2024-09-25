@@ -1,0 +1,125 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FDEFFB;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('mate.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Contenedor de la estructura principal */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.container {
+    background-color: #FFF5F7;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    position: relative;
+}
+
+h2 {
+    color: #FF66B2;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    color: #FF66B2;
+    font-size: 16px;
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #FFB6C1;
+    background-color: #FFE4E1;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #FF66B2;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #FF66B2;
+    box-shadow: 0 0 8px rgba(255, 102, 178, 0.5);
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #FF66B2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #FF85C0;
+    transform: scale(1.05);
+}
+
+/* Resultados a la derecha */
+.results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 200px;
+}
+
+.result-box {
+    padding: 10px;
+    background-color: #FFE4E1;
+    border-radius: 10px;
+    border: 1px solid #FFB6C1;
+    color: #FF66B2;
+    font-size: 16px;
+    text-align: left;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

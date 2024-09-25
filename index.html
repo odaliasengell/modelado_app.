@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones Matemáticas Interactivas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="container">
+            <h2>Operaciones Matemáticas</h2>
+            
+            <!-- Ingreso del primer número -->
+            <label for="num1">Ingrese el primer número:</label>
+            <input type="number" id="num1" placeholder="Primer número" step="any">
+            <p class="input-hint" id="hint1"></p>
+
+            <!-- Ingreso del segundo número -->
+            <label for="num2">Ingrese el segundo número:</label>
+            <input type="number" id="num2" placeholder="Segundo número" step="any">
+            <p class="input-hint" id="hint2"></p>
+
+            <!-- Botón de cálculo -->
+            <button id="calcular">Realizar Operaciones</button>
+        </div>
+
+        <!-- Contenedor de resultados -->
+        <div class="results-container">
+            <div id="result1" class="result-box hidden"></div>
+            <div id="result2" class="result-box hidden"></div>
+            <div id="result3" class="result-box hidden"></div>
+            <div id="result4" class="result-box hidden"></div>
+            <div id="result5" class="result-box hidden"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
