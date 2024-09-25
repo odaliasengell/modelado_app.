@@ -1,0 +1,41 @@
+name: CI Pipeline
+
+# Define cuándo ejecutar este pipeline
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Define los trabajos a realizar
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Compilando el proyecto
+        run: echo "Compilando el proyecto..."
+        # Aquí puedes añadir el comando de compilación específico de tu proyecto
+        # Ejemplo: gcc main.c -o main para proyectos en C
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Ejecutando pruebas unitarias
+        run: echo "Ejecutando pruebas unitarias..."
+        # Añade aquí el comando de pruebas
+        # Ejemplo: pytest tests/
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulación de despliegue en servidor
+        run: echo "Simulación de despliegue en servidor..."
+        # Aquí puedes agregar más tarde los comandos de despliegue reales
