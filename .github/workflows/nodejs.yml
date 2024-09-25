@@ -1,0 +1,25 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]    # Ejecutar al hacer push en la rama main
+  pull_request:
+    branches: [ "main" ]    # Ejecutar al crear pull request en la rama main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.x' # Usa Node.js versión 16.x
+
+    - run: npm install       # Instalar las dependencias necesarias
+
+    - name: Run Tests
+      run: npm test          # Ejecutar las pruebas con npm test
